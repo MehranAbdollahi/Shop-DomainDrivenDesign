@@ -7,9 +7,9 @@ public class Category : AggregateRoot
 {
     public string Title { get; private set; }
     public ICollection<CategoryItem> Items { get; private set; }
-    public int SubCategoryId { get; set; }
+    public int? SubCategoryId { get; set; }
 
-    public Category(string title, int subCategoryId)
+    public Category(string title, int? subCategoryId)
     {
         Guard(title);
         Title = title;
@@ -17,7 +17,7 @@ public class Category : AggregateRoot
         Items = new List<CategoryItem>();
     }
 
-    public void Edit(string title, int subCategoryId)
+    public void Edit(string title, int? subCategoryId)
     {
         Guard(title);
         Title = title;

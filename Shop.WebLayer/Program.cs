@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Shop.Infrastructure.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
+var services = builder.Services;
+
 // Add services to the container.
-builder.Services.AddRazorPages();
+services.AddRazorPages();
+
+services.AddDbContext<ShopContext>(option =>
+{
+    option.UseSqlServer("Server=.;DataBase=BlogDB;Integrated Security=true;MultipleActiveResultSets=true;TrustServerCertificate=True");
+    option.UseSqlServer(b => b.MigrationsAssembly("Blog-Web"));
+});
 
 var app = builder.Build();
 

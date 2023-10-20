@@ -4,7 +4,7 @@ public interface ICategoryRepository
 {
     List<Category> GetList();
     Category GetById(long id);
-    void Add(Category order);
-    void Update(Category order);
+    void Add(Category category);
+    void Update(Category category);
     void SaveChanges();
 }

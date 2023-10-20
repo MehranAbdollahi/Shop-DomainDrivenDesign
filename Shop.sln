@@ -9,9 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndPoints", "EndPoints", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Domain", "Shop.Domain\Shop.Domain.csproj", "{567A0DE8-FEF5-4D3E-B449-CA2B67A4941F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Contracts", "Shop.Contracts\Shop.Contracts.csproj", "{8D172FD8-A891-437A-BD4D-9A5F5A9BFEA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Contracts", "Shop.Contracts\Shop.Contracts.csproj", "{8D172FD8-A891-437A-BD4D-9A5F5A9BFEA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{2FC2C704-D7C1-465C-B77C-A26CD2AFE66B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Application", "Shop.Application\Shop.Application.csproj", "{2FC2C704-D7C1-465C-B77C-A26CD2AFE66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Infrastructure", "Shop.Infrastructure\Shop.Infrastructure.csproj", "{3E90C31F-BDFF-4DBA-A8E9-45942975275D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{2FC2C704-D7C1-465C-B77C-A26CD2AFE66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC2C704-D7C1-465C-B77C-A26CD2AFE66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC2C704-D7C1-465C-B77C-A26CD2AFE66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E90C31F-BDFF-4DBA-A8E9-45942975275D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E90C31F-BDFF-4DBA-A8E9-45942975275D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E90C31F-BDFF-4DBA-A8E9-45942975275D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E90C31F-BDFF-4DBA-A8E9-45942975275D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

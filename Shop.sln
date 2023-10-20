@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Infrastructure", "Shop
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12FF20A8-5F0C-40CA-9AFB-1B97ACEBC312}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A325DD73-A8E9-4370-8FB5-6A2045C89A4F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A325DD73-A8E9-4370-8FB5-6A2045C89A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Domain.Test.Unit", "Shop.Domain.Test.Unit\Shop.Domain.Test.Unit.csproj", "{07B713DD-5CE4-4A3B-8714-DE325B36E146}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Domain.Test.Unit", "Shop.Domain.Test.Unit\Shop.Domain.Test.Unit.csproj", "{07B713DD-5CE4-4A3B-8714-DE325B36E146}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

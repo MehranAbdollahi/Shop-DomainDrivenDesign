@@ -17,6 +17,11 @@ public class Product : AggregateRoot
         Images = new List<ProductImage>();
     }
 
+    private Product()
+    {
+        
+    }
+
     public void Edit(string title, Money price)
     {
         Guard(title);

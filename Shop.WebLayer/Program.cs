@@ -10,8 +10,8 @@ services.AddRazorPages();
 
 services.AddDbContext<ShopContext>(option =>
 {
-    option.UseSqlServer("Server=.;DataBase=BlogDB;Integrated Security=true;MultipleActiveResultSets=true;TrustServerCertificate=True");
-    option.UseSqlServer(b => b.MigrationsAssembly("Blog-Web"));
+    option.UseSqlServer("Server=.;DataBase=ShopDB;Integrated Security=true;MultipleActiveResultSets=true;TrustServerCertificate=True");
+    option.UseSqlServer(b => b.MigrationsAssembly("Shop.WebLayer"));
 });
 
 var app = builder.Build();

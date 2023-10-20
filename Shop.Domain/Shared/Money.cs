@@ -7,6 +7,10 @@ public class Money : BaseValueObject
 {
     public int RialValue { get; }
 
+    private Money()
+    {
+        
+    }
     public Money(int rialValue)
     {
         if (rialValue < 0)

@@ -14,4 +14,9 @@ public class PhoneNumber : BaseValueObject
 
         Phone = phone;
     }
+
+    private PhoneNumber()
+    {
+        
+    }
 }

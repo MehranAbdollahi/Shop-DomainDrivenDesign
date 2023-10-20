@@ -5,6 +5,11 @@ namespace Shop.Domain.OrderAgg
 {
     public class OrderItem : BaseEntity
     {
+        private OrderItem()
+        {
+
+        }
+
         public long OrderId { get; protected set; }
         public int Count { get; private set; }
         public long ProductId { get; private set; }
@@ -16,6 +21,7 @@ namespace Shop.Domain.OrderAgg
             ProductId = productId;
             Price = price;
         }
+
 
     }
 }

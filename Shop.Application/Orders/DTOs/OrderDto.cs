@@ -1,4 +1,6 @@
-﻿namespace Shop.Application.Orders.DTOs;
+﻿using Shop.Domain.Shared;
+
+namespace Shop.Application.Orders.DTOs;
 
 public class OrderDto
 {
@@ -6,5 +8,5 @@ public class OrderDto
     public long Id { get;  set; }
     public long ProductId { get;  set; }
     public int Count { get;  set; }
-    public int Price { get;  set; }
+    public Money Price { get;  set; }
 }

@@ -2,10 +2,14 @@
 using Shop.Domain.UserAgg.Events;
 using Shop.Domain.Users.ValueObjects;
 
-namespace Shop.Domain.Users;
+namespace Shop.Domain.UserAgg;
 
 public class User : AggregateRoot
 {
+    private User()
+    {
+        
+    }
     public User(string name, string family, PhoneBook phoneBook, string email)
     {
         Name = name;

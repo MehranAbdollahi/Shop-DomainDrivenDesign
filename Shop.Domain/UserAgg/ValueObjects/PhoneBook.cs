@@ -12,4 +12,9 @@ public class PhoneBook : BaseValueObject
         TelePhone = telePhone;
         Fax = fax;
     }
+
+    private PhoneBook()
+    {
+        
+    }
 }

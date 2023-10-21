@@ -23,13 +23,14 @@ public class Category : AggregateRoot
         Title = title;
         SubCategoryId = subCategoryId;
     }
-    public void RemoveItem(long id)
+    public long RemoveItem(long productId)
     {
-        var item = Items.FirstOrDefault(f => f.Id == id);
+        var item = Items.FirstOrDefault(f => f.ProductId == productId);
         if (item == null)
             throw new NullOrEmptyDomainDataException("Item not found");
 
         Items.Remove(item);
+        return productId;
     }
     public void AddItem(long productId)
     {

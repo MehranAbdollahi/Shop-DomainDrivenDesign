@@ -8,7 +8,7 @@ using Shop.Domain.Orders;
 using FluentAssertions;
 using System.Collections.Generic;
 
-namespace Shop.Application.Test.Unit
+namespace Shop.Application.Test.Unit.Orders
 {
     public class OrderServiceTests
     {

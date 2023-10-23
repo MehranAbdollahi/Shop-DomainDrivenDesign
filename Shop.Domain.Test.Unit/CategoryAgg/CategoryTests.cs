@@ -5,6 +5,7 @@ using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 using Shop.Domain.CategoryAgg;
 using Shop.Domain.Orders;
+using Newtonsoft.Json.Linq;
 
 namespace Shop.Domain.Test.Unit.CategoryAgg
 {
@@ -24,7 +25,7 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
 
 
             category.Title.Should().Be("title");
-            category.SubCategoryId.Should().Be(1);
+            category.ParentId.Should().Be(1);
             category.Id.Should().Be(category.Id);
         }
 
@@ -35,7 +36,7 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
             category.Edit("new title", 2);
 
 
-            category.SubCategoryId.Should().Be(2);
+            category.ParentId.Should().Be(2);
         }
 
         [Fact]
@@ -45,17 +46,17 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
 
             var res = () => category.RemoveItem(1);
 
-            res.Should().Throws<NullOrEmptyDomainDataException>();
+            res.Should().ThrowExactly<NullOrEmptyDomainDataException>();
         }
 
         [Fact]
-        public void RemoveItem_Should_remove_exist_category_and_return_category_id()
+        public void RemoveItem_Should_remove_exist_category()
         {
-            category.AddItem(2);
+            category.AddItem(0);
 
-            var res = category.RemoveItem(2);
+            category.RemoveItem(0);
 
-            res.Should().Be(2);
+            category.TotalCategoryItems.Should().Be(0);
 
         }
 

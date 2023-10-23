@@ -16,14 +16,14 @@ public class CategoryService : ICategoryService
 
     public void AddCategory(AddCategoryDto command)
     {
-        _repository.Add(new Category(command.Title,command.SubCategoryId));
+        _repository.Add(new Category(command.Title,command.ParentId));
         _repository.SaveChanges();
     }
 
     public void EditCategory(EditCategoryDto command)
     {
         var category = _repository.GetById(command.Id);
-        category.Edit(command.Title,command.SubCategoryId);
+        category.Edit(command.Title,command.ParentId);
 
         _repository.Update(category);
         _repository.SaveChanges();
@@ -36,7 +36,7 @@ public class CategoryService : ICategoryService
         {
             Id = categoryId,
             Title = category.Title,
-            SubCategoryId = category.SubCategoryId
+            ParentId = category.ParentId
         };
     }
 
@@ -46,7 +46,7 @@ public class CategoryService : ICategoryService
         {
             Id = category.Id,
             Title = category.Title,
-            SubCategoryId = category.SubCategoryId
+            ParentId = category.ParentId
         }).ToList();
 
     }

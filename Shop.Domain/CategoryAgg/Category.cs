@@ -7,34 +7,39 @@ public class Category : AggregateRoot
 {
     public string Title { get; private set; }
     public ICollection<CategoryItem> Items { get; private set; }
-    public int? SubCategoryId { get; set; }
+    public int? ParentId { get; set; }
+    public int TotalCategoryItems { get; set; }
 
-    public Category(string title, int? subCategoryId)
+    public Category(string title, int? parentId)
     {
         Guard(title);
         Title = title;
-        SubCategoryId = subCategoryId;
+        ParentId = parentId;
         Items = new List<CategoryItem>();
+
     }
 
     public void Edit(string title, int? subCategoryId)
     {
         Guard(title);
         Title = title;
-        SubCategoryId = subCategoryId;
+        ParentId = subCategoryId;
     }
-    public long RemoveItem(long productId)
+    public void RemoveItem(long productId)
     {
         var item = Items.FirstOrDefault(f => f.ProductId == productId);
         if (item == null)
             throw new NullOrEmptyDomainDataException("Item not found");
-
+        TotalCategoryItems--;
         Items.Remove(item);
-        return productId;
+
     }
     public void AddItem(long productId)
     {
+        TotalCategoryItems++;
+
         Items.Add(new CategoryItem(Id, productId));
+
     }
     private void Guard(string title)
     {

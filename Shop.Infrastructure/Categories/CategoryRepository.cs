@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Shop.Domain.CategoryAgg;
+﻿using Shop.Domain.CategoryAgg;
 using Shop.Domain.CategoryAgg.Repository;
-using Shop.Domain.Orders;
-using Shop.Infrastructure.Context;
+using Shop.Infrastructure.EF.Core.Context;
 
-namespace Shop.Infrastructure.Categories
+namespace Shop.Infrastructure.EF.Core.Categories
 {
     internal class CategoryRepository : ICategoryRepository
     {
-        ShopContext _shopContext;
+        readonly ShopContext _shopContext;
 
         public CategoryRepository(ShopContext shopContext)
         {

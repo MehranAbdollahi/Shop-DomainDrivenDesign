@@ -1,6 +1,6 @@
 ﻿using Shop.Domain.Orders;
 using Shop.Domain.Orders.Repository;
-using Shop.Infrastructure.Context;
+using Shop.Infrastructure.EF.Core.Context;
 
 namespace Shop.Infrastructure.Orders;
 

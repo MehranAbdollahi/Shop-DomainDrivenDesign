@@ -1,14 +1,15 @@
 ﻿using Shop.Domain.Products;
 using Shop.Domain.Shared;
 using Shop.Application.Products.DTOs;
+using Shop.Domain.ProductAgg;
 
 namespace Shop.Application.Products;
 
-public class CategoryService : IProductService
+public class ProductService : IProductService
 {
     private readonly IProductRepository _repository;
 
-    public CategoryService(IProductRepository repository)
+    public ProductService(IProductRepository repository)
     {
         _repository = repository;
     }
@@ -28,10 +29,10 @@ public class CategoryService : IProductService
         _repository.Save();
     }
 
-    public CategoryDto GetProductById(long productId)
+    public ProductDto GetProductById(long productId)
     {
         var product = _repository.GetById(productId);
-        return new CategoryDto()
+        return new ProductDto()
         {
             Price = product.Money.RialValue,
             Id = productId,
@@ -39,9 +40,9 @@ public class CategoryService : IProductService
         };
     }
 
-    public List<CategoryDto> GetProducts()
+    public List<ProductDto> GetProducts()
     {
-        return _repository.GetList().Select(product => new CategoryDto()
+        return _repository.GetList().Select(product => new ProductDto()
         {
             Price = product.Money.RialValue,
             Id = product.Id,

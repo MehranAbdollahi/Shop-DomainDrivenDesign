@@ -1,11 +1,12 @@
-﻿using Shop.Domain.Products;
-using Shop.Infrastructure.Context;
+﻿using Shop.Domain.ProductAgg;
+using Shop.Domain.Products;
+using Shop.Infrastructure.EF.Core.Context;
 
-namespace Shop.Infrastructure.Products;
+namespace Shop.Infrastructure.EF.Core.Products;
 
 public class ProductRepository : IProductRepository
 {
-    private ShopContext _context;
+    private readonly ShopContext _context;
     public ProductRepository(ShopContext context)
     {
         _context = context;

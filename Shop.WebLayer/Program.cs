@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Shop.Config;
-using Shop.Infrastructure.Context;
+using Shop.Infrastructure.EF.Core.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +8,12 @@ var services = builder.Services;
 
 // Add services to the container.
 services.AddRazorPages();
+
+services.AddDbContext<ShopContext>(option =>
+{
+    option.UseSqlServer("Server=.;DataBase=ShopDB;Integrated Security=true;MultipleActiveResultSets=true;TrustServerCertificate=True");
+    option.UseSqlServer(b => b.MigrationsAssembly("Shop.WebLayer"));
+});
 
 ProjectBootstrapper.Init(services);
 

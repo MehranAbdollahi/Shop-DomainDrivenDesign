@@ -6,6 +6,6 @@ public interface IProductService
 {
     void AddProduct(AddProductDto command);
     void EditProduct(EditProductDto command);
-    CategoryDto GetProductById(long productId);
-    List<CategoryDto> GetProducts();
+    ProductDto GetProductById(long productId);
+    List<ProductDto> GetProducts();
 }

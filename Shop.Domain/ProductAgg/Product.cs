@@ -6,9 +6,9 @@ namespace Shop.Domain.Products;
 
 public class Product : AggregateRoot
 {
-    public string Title { get; private set; }
-    public Money Money { get; private set; }
-    public ICollection<ProductImage> Images { get; private set; }
+    public string Title { get; private set; } 
+    public Money Money { get; private set; } 
+    public ICollection<ProductImage> Images { get; private set; } 
     public Product(string title, Money price)
     {
         Guard(title);

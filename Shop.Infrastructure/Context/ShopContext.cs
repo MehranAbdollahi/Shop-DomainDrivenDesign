@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Shop.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Shop.Domain.CategoryAgg;
 using Shop.Domain.OrderAgg;
 using Shop.Domain.Orders;
 using Shop.Domain.ProductAgg;
 using Shop.Domain.Products;
 using Shop.Domain.UserAgg;
-using Shop.Domain.Users;
 
-namespace Shop.Infrastructure.Context
+namespace Shop.Infrastructure.EF.Core.Context
 {
     public class ShopContext : DbContext
     {
-        public ShopContext(DbContextOptions<ShopContext> options) : base(options)
+        public ShopContext(DbContextOptions<ShopContext> options, DbSet<Category> categories, DbSet<Order> orders, DbSet<OrderItem> orderItems, DbSet<Product> products, DbSet<ProductImage> productImages, DbSet<User> users) : base(options)
         {
-
+            Categories = categories;
+            Orders = orders;
+            OrderItems = orderItems;
+            Products = products;
+            ProductImages = productImages;
+            Users = users;
         }
 
         public DbSet<Category> Categories { get; set; }

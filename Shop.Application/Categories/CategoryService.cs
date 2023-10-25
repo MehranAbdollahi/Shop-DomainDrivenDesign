@@ -14,6 +14,11 @@ public class CategoryService : ICategoryService
         _repository = repository;
     }
 
+    public CategoryService()
+    {
+        
+    }
+
     public void AddCategory(AddCategoryDto command)
     {
         _repository.Add(new Category(command.Title,command.ParentId));

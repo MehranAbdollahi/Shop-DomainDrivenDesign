@@ -4,7 +4,7 @@ namespace Shop.Application.Products;
 
 public interface IProductService
 {
-    void AddProduct(AddProductDto command);
+    long AddProduct(AddProductDto command);
     void EditProduct(EditProductDto command);
     ProductDto GetProductById(long productId);
     List<ProductDto> GetProducts();

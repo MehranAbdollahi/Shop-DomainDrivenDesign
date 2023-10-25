@@ -10,15 +10,11 @@ namespace Shop.Infrastructure.EF.Core.Context
 {
     public class ShopContext : DbContext
     {
-        public ShopContext(DbContextOptions<ShopContext> options, DbSet<Category> categories, DbSet<Order> orders, DbSet<OrderItem> orderItems, DbSet<Product> products, DbSet<ProductImage> productImages, DbSet<User> users) : base(options)
+        public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
-            Categories = categories;
-            Orders = orders;
-            OrderItems = orderItems;
-            Products = products;
-            ProductImages = productImages;
-            Users = users;
+
         }
+
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }

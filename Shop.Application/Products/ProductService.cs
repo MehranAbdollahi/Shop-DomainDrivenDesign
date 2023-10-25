@@ -14,10 +14,13 @@ public class ProductService : IProductService
         _repository = repository;
     }
 
-    public void AddProduct(AddProductDto command)
+    public long AddProduct(AddProductDto command)
     {
-        _repository.Add(new Product(command.Title,Money.FromTooman(command.Price)));
+        Product product = new Product(command.Title, Money.FromTooman(command.Price));
+        _repository.Add(product);
         _repository.Save();
+
+        return product.Id;
     }
 
     public void EditProduct(EditProductDto command)

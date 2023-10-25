@@ -10,18 +10,13 @@ namespace Shop.API.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
 
-        public ProductController(ProductService productService)
+        public ProductController(IProductService productService)
         {
             _productService = productService;
         }
-        [HttpPost]
-        public void AddProducts(AddProductDto command)
-        {
 
-            _productService.AddProduct(command);
-        }
         [HttpGet]
         public Task<List<ProductDto>> GetProducts()
         {
@@ -29,10 +24,40 @@ namespace Shop.API.Controllers
             return Task.FromResult(_productService.GetProducts());
         }
         [HttpGet("{productId}")]
-        public Task<ProductDto> GetOneProductById(long productId)
+        public Task<ProductDto> GetOneProductById([FromRoute] long productId)
         {
 
             return Task.FromResult(_productService.GetProductById(productId));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddProducts([FromForm] AddProductDto command)
+        {
+
+            var res = _productService.AddProduct(command);
+            var url = Url.Action(nameof(GetOneProductById), "Product", new { productId = res }, Request.Scheme);
+            return Created(url, res);
+        }
+
+        [HttpPost("Images")]
+        public async Task<IActionResult> AddProductImage(AddProductDto command)
+        {
+
+            //
+            return Ok();
+        }
+
+        [HttpPut]
+        public void EditProducts(EditProductDto command)
+        {
+            _productService.EditProduct(command);
+
+        }
+
+        [HttpDelete]
+        public void DeleteProducts(long productId)
+        {
+            //
         }
     }
 }

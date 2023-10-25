@@ -12,6 +12,7 @@ using Shop.Domain.Products;
 using Shop.Infrastructure;
 using Shop.Infrastructure.EF.Core.Products;
 using Shop.Infrastructure.Orders;
+using Shop.Domain.CategoryAgg.Repository;
 
 namespace Shop.Config
 {

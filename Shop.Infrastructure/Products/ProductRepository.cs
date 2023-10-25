@@ -29,8 +29,8 @@ public class ProductRepository : IProductRepository
     public void Update(Product product)
     {
         var oldProduct = GetById(product.Id);
-        _context.Products.Remove(oldProduct);
-        Add(product);
+        _context.Products.Update(oldProduct);
+      //  Add(product);
     }
 
     public void Remove(Product product)

@@ -21,11 +21,18 @@ public class User : AggregateRoot
     public string Email { get; private set; }
     public string Family { get; private set; }
     public PhoneBook PhoneBook { get; private set; }
+    public UserRole Role { get; set; }
 
     public static User Register(string email)
     {
         var user = new User("", "", null, email);
         user.AddDomainEvent(new UserRegistered(user.Id, email));
         return user;
+    }
+    public enum UserRole
+    {
+        Admin,
+        User,
+        Writer
     }
 }

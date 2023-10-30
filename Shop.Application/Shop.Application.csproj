@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Shop.Contracts\Shop.Contracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="User\" />
-  </ItemGroup>
-
 </Project>

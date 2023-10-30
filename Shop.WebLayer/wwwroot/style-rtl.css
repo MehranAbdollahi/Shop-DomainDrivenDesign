@@ -1,0 +1,299 @@
+/*rtlmellatweb*/
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url("css/fonts/eot/iranyekanwebbold.eot");
+  src: url("css/fonts/eot/iranyekanwebbold.eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/iranyekanwebbold.woff2") format("woff2"), url("css/fonts/woff/iranyekanwebbold.woff") format("woff"), url("css/fonts/ttf/iranyekanwebbold.ttf") format("truetype");
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url("css/fonts/eot/iranyekanweblight.eot");
+  src: url("css/fonts/eot/iranyekanweblight.eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/iranyekanweblight.woff2") format("woff2"), url("css/fonts/woff/iranyekanweblight.woff") format("woff"), url("css/fonts/ttf/iranyekanweblight.ttf") format("truetype");
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url("css/fonts/eot/iranyekanwebregular.eot");
+  src: url("css/fonts/eot/iranyekanwebregular.eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/iranyekanwebregular.woff2") format("woff2"), url("css/fonts/woff/iranyekanwebregular.woff") format("woff"), url("css/fonts/ttf/iranyekanwebregular.ttf") format("truetype");
+}
+/* Latin fonts (Roboto) */
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: bold;
+  src: url("css/fonts/eot/robotobold.eot");
+  src: url("css/fonts/eot/robotobold.eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/robotobold.woff2") format("woff2"), url("css/fonts/woff/robotobold.woff") format("woff"), url("css/fonts/ttf/robotobold.ttf") format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 300;
+  src: url("css/fonts/eot/robotolight.eot");
+  src: url("css/fonts/eot/robotolight.eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/robotolight.woff2") format("woff2"), url("css/fonts/woff/robotolight.woff") format("woff"), url("css/fonts/ttf/robotolight.ttf") format("truetype");
+}
+@font-face {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: normal;
+  src: url("css/fonts/eot/robotoregular.eot");
+  src: url("css/fonts/eot/robotoregular.eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/robotoregular.woff2") format("woff2"), url("css/fonts/woff/robotoregular.woff") format("woff"), url("css/fonts/ttf/robotoregular.ttf") format("truetype");
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url("css/fonts/eot/iranyekanwebbold(fanum).eot");
+  src: url("css/fonts/eot/iranyekanwebbold(fanum).eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/iranyekanwebbold(fanum).woff2") format("woff2"), url("css/fonts/woff/iranyekanwebbold(fanum).woff") format("woff"), url("css/fonts/ttf/iranyekanwebbold(fanum).ttf") format("truetype");
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url("css/fonts/eot/iranyekanweblight(fanum).eot");
+  src: url("css/fonts/eot/iranyekanweblight(fanum).eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/iranyekanweblight(fanum).woff2") format("woff2"), url("css/fonts/woff/iranyekanweblight(fanum).woff") format("woff"), url("css/fonts/ttf/iranyekanweblight(fanum).ttf") format("truetype");
+}
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url("css/fonts/eot/iranyekanwebregular(fanum).eot");
+  src: url("css/fonts/eot/iranyekanwebregular(fanum).eot?#iefix") format("embedded-opentype"), url("css/fonts/woff2/iranyekanwebregular(fanum).woff2") format("woff2"), url("css/fonts/woff/iranyekanwebregular(fanum).woff") format("woff"), url("css/fonts/ttf/iranyekanwebregular(fanum).ttf") format("truetype");
+}
+/**IranYekan>>*/
+a, body, h1, h2, h3, h4, h5, h6, p, .button, button, input, textarea, .btn-success {
+  font-family: iranyekan !important;
+}
+
+.btn-success, .btn, .btn:hover, .btn:focus {
+  font-family: "iranyekan" !important;
+}
+
+body {
+  direction: rtl;
+}
+
+/*.owl-carousel .owl-stage-outer {
+    direction: ltr!important;
+}*/
+.live-chat-wrapper {
+  direction: ltr;
+}
+
+.pwa-install-alert .close {
+  left: 1.25rem;
+  right: auto !important;
+}
+
+.weekly-product-card .product-thumbnail-side .badge {
+  right: 0.5rem;
+  left: auto !important;
+}
+
+.weekly-product-card .product-thumbnail-side .wishlist-btn {
+  right: 0.5rem;
+  left: auto !important;
+}
+
+.mr-1 {
+  margin-left: 0.25rem !important;
+  margin-right: 0 !important;
+}
+
+.top-product-card .btn {
+  left: 12px;
+  right: auto !important;
+}
+
+.weekly-product-card .product-description .sale-price i {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+.discount-coupon-card .coupon-text-wrap h5 {
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-right: 0 !important;
+}
+
+.single-settings .title i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.sales-offer-content .sales-end-timer li {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.single-user-review .user-thumbnail {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.product-description .total-result-of-ratings span:first-child {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+.product-title-meta-data .p-wishlist-share {
+  text-align: left !important;
+}
+
+.product-description .sale-price span {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.pl-1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0 !important;
+}
+
+.ml-3 {
+  margin-right: 1rem !important;
+  margin-left: 0 !important;
+}
+
+.mr-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
+.pr-3 {
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+.pl-3 {
+  padding-right: 1rem !important;
+  padding-left: 0 !important;
+}
+
+.pwa-install-alert .toast-body .content img {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.weekly-product-card .product-description .sale-price span {
+  margin-right: 0.25rem;
+  margin-left: 0;
+}
+
+.weekly-product-card .product-description .product-rating i {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+.register-form .form-control {
+  text-align: left;
+}
+
+.preview-iframe-wrapper .features-area ul li::before, .register-form form > .form-group > label, .suha-sidenav-wrapper.nav-active {
+  right: 0;
+  left: auto !important;
+}
+
+.suha-sidenav-wrapper {
+  right: -250px;
+  left: auto !important;
+}
+
+.preview-iframe-wrapper .features-area ul li {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+.register-form .form-control {
+  padding: 8px 24px 8px 8px !important;
+}
+
+.sidenav-nav li a i {
+  margin-left: 0.5rem;
+  margin-right: 0 !important;
+}
+
+li.suha-dropdown-menu .dropdown-trigger-btn {
+  left: 0 !important;
+  right: auto !important;
+  text-align: left !important;
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+.user-data-card .title i {
+  margin-left: 0.4rem;
+  margin-right: 0;
+}
+
+.notification-area .list-group-item .noti-icon {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+.page-nav li a i {
+  margin-right: auto;
+  margin-left: 0 !important;
+  transform: rotate(180deg);
+}
+
+.otp-form.mt-5.mx-4 {
+  direction: ltr;
+}
+
+.post-meta-data span i {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+.post-meta-data a span {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.blog-card.list-card .post-content {
+  right: 0.75rem;
+  left: AUTO !important;
+}
+
+.blog-card.list-card .read-more-btn {
+  left: 0.75rem;
+  right: auto !important;
+}
+
+.blog-card .post-content .post-meta a i {
+  margin-left: 0.25rem;
+  margin-right: 0 !important;
+}
+
+.blog-card .post-content .post-meta span i {
+  margin-left: 0.25rem;
+  margin-right: 0 !important;
+}
+
+.accordian-card .accordian-header button span i {
+  margin-left: 0.5rem;
+  margin-right: 0 !important;
+}
+
+.accordian-card .accordian-header button.collapsed > i {
+  transform: rotate(180deg) !important;
+}
+
+.single-settings .data-content i {
+  margin-right: 0.25rem;
+  margin-left: 0 !important;
+  transform: rotate(180deg);
+}
+
+.form-select {
+  background-position: left 0.75rem center !important;
+}
+
+.back-button a i {
+  transform: rotate(180deg);
+}
+
+/*# sourceMappingURL=style-rtl.css.map */

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shop.Application.Users.DTOs;
+using Shop.Application.Utilities;
 
 namespace Shop.Application.Users
 {
     public interface IUserService
     {
-        void RegisterUser(UserRegisterDto userRegisterDto);
+        OperationResult RegisterUser(UserRegisterDto userRegisterDto);
     }
 }

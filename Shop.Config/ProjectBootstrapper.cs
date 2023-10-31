@@ -4,6 +4,7 @@ using Shop.Application.Categories;
 using Shop.Application.Orders.Services;
 using Shop.Application.Orders;
 using Shop.Application.Products;
+using Shop.Application.Users;
 using Shop.Contracts;
 using Shop.Domain.OrderAgg.Services;
 using Shop.Domain.Orders.Repository;
@@ -11,8 +12,10 @@ using Shop.Domain.ProductAgg;
 using Shop.Domain.Products;
 using Shop.Infrastructure;
 using Shop.Infrastructure.EF.Core.Products;
+using Shop.Infrastructure.EF.Core.Users;
 using Shop.Infrastructure.Orders;
 using Shop.Domain.CategoryAgg.Repository;
+using Shop.Domain.UserAgg;
 
 namespace Shop.Config
 {
@@ -28,6 +31,8 @@ namespace Shop.Config
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IOrderDomainService, OrderDomainService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<ISmsService, SmsService>();
         }

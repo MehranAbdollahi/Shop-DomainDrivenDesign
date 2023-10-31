@@ -10,10 +10,10 @@ public class User : AggregateRoot
     {
         
     }
-    public User(string name, string fullName, PhoneBook phoneBook, string email, UserRole role, string passWord)
+    public User(string name, string userName, PhoneBook phoneBook, string email, UserRole role, string passWord)
     {
         Name = name;
-        FullName = fullName;
+        UserName = userName;
         PhoneBook = phoneBook;
         Email = email;
         Role = role;
@@ -21,7 +21,7 @@ public class User : AggregateRoot
     }
     public string Name { get; private set; }
     public string Email { get; private set; }
-    public string FullName { get; private set; }
+    public string UserName { get; private set; }
 
     public string PassWord { get; private set; }
     public PhoneBook PhoneBook { get; private set; }

@@ -1,6 +1,6 @@
 ﻿using Shop.Domain.Shared;
 
-namespace Shop.Domain.Users.ValueObjects;
+namespace Shop.Domain.UserAgg.ValueObjects;
 
 public class PhoneNumber : BaseValueObject
 {

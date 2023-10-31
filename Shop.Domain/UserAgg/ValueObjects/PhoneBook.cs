@@ -1,4 +1,5 @@
 ﻿using Shop.Domain.Shared;
+using Shop.Domain.UserAgg.ValueObjects;
 
 namespace Shop.Domain.Users.ValueObjects;
 

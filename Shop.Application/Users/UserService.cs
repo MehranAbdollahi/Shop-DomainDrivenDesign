@@ -21,9 +21,9 @@ public class UserService : IUserService
 
     public OperationResult RegisterUser(UserRegisterDto command)
     {
-        var isFullNameExist = _repository.GetList().Any(u => u.UserName == command.UserName);
+        var isUserNameExist = _repository.GetList().Any(u => u.UserName == command.UserName);
 
-        if (isFullNameExist)
+        if (isUserNameExist)
         {
             return OperationResult.Error("نام کاربری تکراری است .");
         }
@@ -36,12 +36,35 @@ public class UserService : IUserService
         var user = new User(command.UserName,
             command.UserName,
             phone, command.Email,
-            User.UserRole.User,
+            User.UserRole.Admin,
             hashedPassword);
 
         _repository.Add(user);
         _repository.Save();
 
         return OperationResult.Success("موفق");
+    }
+
+    public UserDto LoginUser(UserLoginDto command)
+    {
+        var user = _repository.GetList().FirstOrDefault(u => u.UserName == command.UserName
+                                                             && u.PassWord == command.PassWord.EncodeToMd5());
+
+        if (user == null)
+        {
+            return null;
+        }
+
+        var userDto = new UserDto()
+        {
+            Id = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            UserName = user.UserName,
+            PassWord = user.PassWord,
+            Role = user.Role
+        };
+
+        return userDto;
     }
 }

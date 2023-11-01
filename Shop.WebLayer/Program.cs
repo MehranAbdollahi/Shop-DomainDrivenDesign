@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Shop.Config;
 using Shop.Infrastructure.EF.Core.Context;
@@ -17,6 +18,19 @@ services.AddDbContext<ShopContext>(option =>
 
 ProjectBootstrapper.Init(services);
 
+#region Authentication
+services.AddAuthentication(option =>
+{
+    option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    option.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(option =>
+{
+    option.LoginPath = "/Auth/Login";
+    option.LogoutPath = "/Auth/LogOut";
+    option.ExpireTimeSpan = TimeSpan.FromDays(3);
+});
+#endregion
 
 var app = builder.Build();
 
@@ -33,6 +47,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

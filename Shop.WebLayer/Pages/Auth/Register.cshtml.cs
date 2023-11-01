@@ -8,6 +8,7 @@ using Shop.Application.Utilities;
 namespace Shop.WebLayer.Pages.Auth
 {
     [BindProperties]
+    [ValidateAntiForgeryToken]
     public class RegisterModel : PageModel
     {
 
@@ -36,8 +37,13 @@ namespace Shop.WebLayer.Pages.Auth
         public void OnGet()
         {
         }
+
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             var res = _userService.RegisterUser(new UserRegisterDto()
             {
                 UserName = UserName,

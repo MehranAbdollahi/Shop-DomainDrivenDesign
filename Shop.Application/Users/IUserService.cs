@@ -11,5 +11,6 @@ namespace Shop.Application.Users
     public interface IUserService
     {
         OperationResult RegisterUser(UserRegisterDto userRegisterDto);
+        UserDto LoginUser(UserLoginDto  userLoginDto);
     }
 }

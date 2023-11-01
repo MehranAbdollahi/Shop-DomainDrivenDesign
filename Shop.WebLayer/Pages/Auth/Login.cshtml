@@ -1,43 +1,45 @@
 ﻿@page
 @model Shop.WebLayer.Pages.Auth.LoginModel
 @{
-
+    ViewData["Title"] = "ورد به سایت";
 }
 <body>
     <!-- Login Wrapper Area-->
-<div class="login-wrapper d-flex align-items-center justify-content-center text-center">
-    <!-- Background Shape-->
-    <div class="background-shape"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
-                <img class="big-logo" src="img/core-img/logo-white.png" alt="">
-                <!-- Register Form-->
-                <div class="register-form mt-5 px-4">
-                    <form action="home.html" method="">
-                        <div class="form-group text-right mb-4">
-                            <span>نام کاربری</span>
-                            <label for="username"><i class="lni lni-user"></i></label>
-                            <input class="form-control" id="username" type="text" placeholder="info@example.com">
-                        </div>
-                        <div class="form-group text-right mb-4">
-                            <span>رمز عبور</span>
-                            <label for="password"><i class="lni lni-lock"></i></label>
-                            <input class="form-control" id="password" type="password" placeholder="********************">
-                        </div>
-                        <button class="btn btn-success btn-lg w-100" type="submit">ورود</button>
-                    </form>
+    <div class="login-wrapper d-flex align-items-center justify-content-center text-center">
+        <!-- Background Shape-->
+        <div class="background-shape"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
+                    <img class="big-logo" src="img/core-img/logo-white.png" alt="">
+                    <!-- Register Form-->
+                    <div class="register-form mt-5 px-4">
+                        <form method="post">
+                            <div class="form-group text-right mb-4">
+                                <span>نام کاربری</span>
+                                <label for="UserName"><i class="lni lni-user"></i></label>
+                                <input asp-for="UserName" class="form-control" id="UserName" type="text" placeholder="info@example.com">
+                                <span asp-validation-for="UserName" style="color :red"></span>
+                            </div>
+                            <div class="form-group text-right mb-4">
+                                <span>رمز عبور</span>
+                                <label for="PassWord"><i class="lni lni-lock"></i></label>
+                                <input asp-for="PassWord" class="form-control" id="PassWord" type="PassWord" placeholder="********************">
+                                <span asp-validation-for="PassWord" style="color :red"></span>
+                            </div>
+                            <button class="btn btn-success btn-lg w-100" type="submit">ورود</button>
+                        </form>
+                    </div>
+                    <!-- Login Meta-->
+                    <div class="login-meta-data">
+                        <a class="forgot-password d-block mt-3 mb-1" href="forget-password.html">فراموشی</a>
+                        <p class="mb-0">حساب ندارید؟<a class="ml-1" asp-page="Register">ثبت نام</a></p>
+                    </div>
+                    <!-- View As Guest-->
+                    <div class="view-as-guest mt-3"><a class="btn" asp-page="../Index">مشاهده بصورت مهمان</a></div>
                 </div>
-                <!-- Login Meta-->
-                <div class="login-meta-data">
-                    <a class="forgot-password d-block mt-3 mb-1" href="forget-password.html">فراموشی</a>
-                    <p class="mb-0">حساب ندارید؟<a class="ml-1" asp-page="Register">ثبت نام</a></p>
-                </div>
-                <!-- View As Guest-->
-                <div class="view-as-guest mt-3"><a class="btn" asp-page="../Index">مشاهده بصورت مهمان</a></div>
             </div>
         </div>
     </div>
-</div>
-<partial name ="Shared/_ValidationScriptsPartial"></partial>
+    <partial name="Shared/_ValidationScriptsPartial"></partial>
 </body>

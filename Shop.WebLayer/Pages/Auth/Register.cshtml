@@ -1,7 +1,7 @@
 ﻿@page
 @model Shop.WebLayer.Pages.Auth.RegisterModel
 @{
-
+    ViewData["Title"] = "ثبت نام";
 }
 
 
@@ -21,19 +21,19 @@
                                 <span>نام کاربری</span>
                                 <label for="UserName"><i class="lni lni-user"></i></label>
                                 <input asp-for="UserName" class="form-control" id="UserName" type="text" placeholder="Designing World">
-                                <span asp-validation-for="UserName"></span>
+                                <span asp-validation-for="UserName" style="color: red"></span>
                             </div>
                             <div class="form-group text-right mb-4">
                                 <span>ایمیل</span>
                                 <label for="Email"><i class="lni lni-envelope"></i></label>
                                 <input asp-for="Email" class="form-control" id="Email" type="email" placeholder="help@example.com">
-                                <span asp-validation-for="Email"></span>
+                                <span asp-validation-for="Email" style="color: red"></span>
                             </div>
                             <div class="form-group text-right mb-4">
                                 <span>رمز عبور</span>
                                 <label for="Password"><i class="lni lni-lock"></i></label>
                                 <input asp-for="Password" class="input-psswd form-control" id="Password" type="password" placeholder="********************">
-                                <span asp-validation-for="Password"></span>
+                                <span asp-validation-for="Password" style="color: red"></span>
                             </div>
                             <button class="btn btn-success btn-lg w-100" type="submit">ثبت نام</button>
                         </form>

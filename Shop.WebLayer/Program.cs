@@ -9,6 +9,7 @@ var services = builder.Services;
 
 // Add services to the container.
 services.AddRazorPages();
+services.AddControllersWithViews();
 
 services.AddDbContext<ShopContext>(option =>
 {
@@ -49,6 +50,11 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+);
 
 app.MapRazorPages();
 

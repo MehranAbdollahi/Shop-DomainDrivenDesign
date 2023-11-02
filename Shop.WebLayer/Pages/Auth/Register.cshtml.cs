@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Shop.Application.Users;
 using Shop.Application.Users.DTOs;
 using Shop.Application.Utilities;
+using Shop.Contracts;
 
 namespace Shop.WebLayer.Pages.Auth
 {

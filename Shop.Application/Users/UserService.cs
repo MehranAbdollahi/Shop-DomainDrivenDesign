@@ -7,7 +7,7 @@ using Shop.Domain.Shared;
 using Shop.Domain.UserAgg;
 using Shop.Domain.UserAgg.ValueObjects;
 using Shop.Domain.Users.ValueObjects;
-
+using Shop.Contracts;
 namespace Shop.Application.Users;
 
 public class UserService : IUserService

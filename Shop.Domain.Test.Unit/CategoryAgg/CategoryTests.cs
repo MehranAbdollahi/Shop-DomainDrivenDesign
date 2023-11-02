@@ -11,7 +11,7 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
 {
     public class CategoryTests
     {
-        private Category category = new Category("title", 1);
+        private readonly Category _category = new Category("title", 1);
 
         public CategoryTests()
         {
@@ -24,27 +24,27 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
 
 
 
-            category.Title.Should().Be("title");
-            category.ParentId.Should().Be(1);
-            category.Id.Should().Be(category.Id);
+            _category.Title.Should().Be("title");
+            _category.ParentId.Should().Be(1);
+            _category.Id.Should().Be(_category.Id);
         }
 
         [Fact]
         public void Edit_Should_update_exist_category()
         {
 
-            category.Edit("new title", 2);
+            _category.Edit("new title", 2);
 
 
-            category.ParentId.Should().Be(2);
+            _category.ParentId.Should().Be(2);
         }
 
         [Fact]
         public void RemoveItem_Should_throw_NullOrEmptyDomainDataException_when_order_item_not_found()
         {
-            category.AddItem(2);
+            _category.AddItem(2);
 
-            var res = () => category.RemoveItem(1);
+            var res = () => _category.RemoveItem(1);
 
             res.Should().ThrowExactly<NullOrEmptyDomainDataException>();
         }
@@ -52,11 +52,11 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
         [Fact]
         public void RemoveItem_Should_remove_exist_category()
         {
-            category.AddItem(0);
+            _category.AddItem(0);
 
-            category.RemoveItem(0);
+            _category.RemoveItem(0);
 
-            category.TotalCategoryItems.Should().Be(0);
+            _category.TotalCategoryItems.Should().Be(0);
 
         }
 

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using Microsoft.Extensions.DependencyInjection;
 using Shop.Application.Categories;
 using Shop.Application.Orders.Services;
@@ -9,13 +9,13 @@ using Shop.Contracts;
 using Shop.Domain.OrderAgg.Services;
 using Shop.Domain.Orders.Repository;
 using Shop.Domain.ProductAgg;
-using Shop.Domain.Products;
 using Shop.Infrastructure;
 using Shop.Infrastructure.EF.Core.Products;
 using Shop.Infrastructure.EF.Core.Users;
 using Shop.Infrastructure.Orders;
 using Shop.Domain.CategoryAgg.Repository;
 using Shop.Domain.UserAgg;
+using Shop.Infrastructure.EF.Core.Categories;
 
 namespace Shop.Config
 {
@@ -30,7 +30,8 @@ namespace Shop.Config
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IOrderDomainService, OrderDomainService>();
-            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
 

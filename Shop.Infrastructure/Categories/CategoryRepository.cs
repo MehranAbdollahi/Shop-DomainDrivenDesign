@@ -4,7 +4,7 @@ using Shop.Infrastructure.EF.Core.Context;
 
 namespace Shop.Infrastructure.EF.Core.Categories
 {
-    internal class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         readonly ShopContext _shopContext;
 

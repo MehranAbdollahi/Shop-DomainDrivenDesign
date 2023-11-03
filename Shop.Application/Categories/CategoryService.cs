@@ -1,6 +1,8 @@
 ﻿using Shop.Domain.CategoryAgg;
 using Shop.Domain.Shared;
 using Shop.Application.Categories.DTOs;
+using Shop.Application.Categories.Mappers;
+using Shop.Application.Utilities;
 using Shop.Domain.CategoryAgg.Repository;
 
 namespace Shop.Application.Categories;
@@ -19,40 +21,40 @@ public class CategoryService : ICategoryService
         
     }
 
-    public void AddCategory(AddCategoryDto command)
+    public OperationResult AddCategory(AddCategoryDto command)
     {
         _repository.Add(new Category(command.Title,command.ParentId));
         _repository.SaveChanges();
+
+        return OperationResult.Success("عملیات با موفقیت انجام شد.");
     }
 
-    public void EditCategory(EditCategoryDto command)
+    public OperationResult EditCategory(EditCategoryDto command)
     {
         var category = _repository.GetById(command.Id);
+
+        if (category == null)
+        {
+            return OperationResult.NotFound("دسته بندی یافت نشد.");
+        }
         category.Edit(command.Title,command.ParentId);
 
         _repository.Update(category);
         _repository.SaveChanges();
+
+        return OperationResult.Success("عملیات با موفقیت انجام شد.");
     }
 
     public CategoryDto GetCategoryById(long categoryId)
     {
         var category = _repository.GetById(categoryId);
-        return new CategoryDto()
-        {
-            Id = categoryId,
-            Title = category.Title,
-            ParentId = category.ParentId
-        };
+
+        return CategoryMapper.Map(category);
     }
 
     public List<CategoryDto> GetCategories()
     {
-        return _repository.GetList().Select(category => new CategoryDto()
-        {
-            Id = category.Id,
-            Title = category.Title,
-            ParentId = category.ParentId
-        }).ToList();
+        return _repository.GetList().Select(CategoryMapper.Map).ToList();
 
     }
 }

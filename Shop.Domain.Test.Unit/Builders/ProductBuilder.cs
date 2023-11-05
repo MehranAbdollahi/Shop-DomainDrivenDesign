@@ -1,5 +1,4 @@
 ﻿using Shop.Domain.ProductAgg;
-using Shop.Domain.Products;
 using Shop.Domain.Shared;
 using System.Collections.Generic;
 

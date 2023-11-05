@@ -1,11 +1,11 @@
 ﻿using Shop.Domain.OrderAgg.Events;
 using Shop.Domain.OrderAgg.Exceptions;
 using Shop.Domain.OrderAgg.Services;
-using Shop.Domain.Orders;
 using Shop.Domain.Shared.Exceptions;
 using FluentAssertions;
 using Xunit;
 using NSubstitute;
+using Shop.Domain.OrderAgg;
 
 namespace Shop.Domain.Test.Unit.OrderAgg;
 public class OrderTests

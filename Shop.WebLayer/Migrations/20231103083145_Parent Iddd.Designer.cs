@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Infrastructure.EF.Core.Context;
 
@@ -11,9 +12,11 @@ using Shop.Infrastructure.EF.Core.Context;
 namespace Shop.WebLayer.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20231103083145_Parent Iddd")]
+    partial class ParentIddd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,8 +35,7 @@ namespace Shop.WebLayer.Migrations
 
                     b.Property<int?>("ParentId")
                         .HasColumnType("int")
-                        .HasColumnName("ParentId")
-                        .HasAnnotation("Relational:SubCategoryId", "SubCategoryId");
+                        .HasColumnName("ParentId");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -117,23 +119,6 @@ namespace Shop.WebLayer.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Shop.Domain.ProductAgg.Product", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Products");
-                });
-
             modelBuilder.Entity("Shop.Domain.ProductAgg.ProductImage", b =>
                 {
                     b.Property<long>("Id")
@@ -154,6 +139,23 @@ namespace Shop.WebLayer.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Products.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Shop.Domain.UserAgg.User", b =>
@@ -226,7 +228,16 @@ namespace Shop.WebLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Shop.Domain.ProductAgg.Product", b =>
+            modelBuilder.Entity("Shop.Domain.ProductAgg.ProductImage", b =>
+                {
+                    b.HasOne("Shop.Domain.Products.Product", null)
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Shop.Domain.Products.Product", b =>
                 {
                     b.OwnsOne("Shop.Domain.Shared.Money", "Money", b1 =>
                         {
@@ -242,15 +253,6 @@ namespace Shop.WebLayer.Migrations
                         });
 
                     b.Navigation("Money")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Shop.Domain.ProductAgg.ProductImage", b =>
-                {
-                    b.HasOne("Shop.Domain.ProductAgg.Product", null)
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -283,7 +285,7 @@ namespace Shop.WebLayer.Migrations
                     b.Navigation("Items");
                 });
 
-            modelBuilder.Entity("Shop.Domain.ProductAgg.Product", b =>
+            modelBuilder.Entity("Shop.Domain.Products.Product", b =>
                 {
                     b.Navigation("Images");
                 });

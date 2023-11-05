@@ -1,8 +1,8 @@
-﻿using Shop.Domain.Orders;
-using Shop.Domain.Orders.Repository;
+﻿using Shop.Domain.OrderAgg;
+using Shop.Domain.OrderAgg.Repository;
 using Shop.Infrastructure.EF.Core.Context;
 
-namespace Shop.Infrastructure.Orders;
+namespace Shop.Infrastructure.EF.Core.Orders;
 
 public class OrderRepository : IOrderRepository
 {

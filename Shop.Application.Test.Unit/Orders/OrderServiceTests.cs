@@ -1,12 +1,12 @@
 using Shop.Application.Orders;
 using Shop.Contracts;
-using Shop.Domain.Orders.Repository;
 using Xunit;
 using NSubstitute;
 using Shop.Application.Orders.DTOs;
-using Shop.Domain.Orders;
 using FluentAssertions;
 using System.Collections.Generic;
+using Shop.Domain.OrderAgg;
+using Shop.Domain.OrderAgg.Repository;
 
 namespace Shop.Application.Test.Unit.Orders
 {

@@ -1,4 +1,3 @@
-using Shop.Domain.Products;
 using Shop.Domain.Shared.Exceptions;
 using FluentAssertions;
 using System;

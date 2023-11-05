@@ -1,11 +1,10 @@
 ﻿using Shop.Domain.OrderAgg.Events;
 using Shop.Domain.OrderAgg.Exceptions;
 using Shop.Domain.OrderAgg.Services;
-using Shop.Domain.OrderAgg;
 using Shop.Domain.Shared;
 using Shop.Domain.Shared.Exceptions;
 
-namespace Shop.Domain.Orders;
+namespace Shop.Domain.OrderAgg;
 
 public class Order : AggregateRoot
 {

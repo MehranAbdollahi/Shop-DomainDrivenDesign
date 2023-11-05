@@ -7,15 +7,16 @@ using Shop.Application.Products;
 using Shop.Application.Users;
 using Shop.Contracts;
 using Shop.Domain.OrderAgg.Services;
-using Shop.Domain.Orders.Repository;
 using Shop.Domain.ProductAgg;
 using Shop.Infrastructure;
 using Shop.Infrastructure.EF.Core.Products;
 using Shop.Infrastructure.EF.Core.Users;
-using Shop.Infrastructure.Orders;
 using Shop.Domain.CategoryAgg.Repository;
+using Shop.Domain.OrderAgg.Repository;
 using Shop.Domain.UserAgg;
+using Shop.Infrastructure.EF.Core;
 using Shop.Infrastructure.EF.Core.Categories;
+using Shop.Infrastructure.EF.Core.Orders;
 
 namespace Shop.Config
 {

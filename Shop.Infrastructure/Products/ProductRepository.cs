@@ -1,5 +1,4 @@
 ﻿using Shop.Domain.ProductAgg;
-using Shop.Domain.Products;
 using Shop.Infrastructure.EF.Core.Context;
 
 namespace Shop.Infrastructure.EF.Core.Products;

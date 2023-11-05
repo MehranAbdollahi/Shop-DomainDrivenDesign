@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.Domain.CategoryAgg;
 using Shop.Domain.OrderAgg;
-using Shop.Domain.Orders;
 using Shop.Domain.ProductAgg;
-using Shop.Domain.Products;
 using Shop.Domain.UserAgg;
 
 namespace Shop.Infrastructure.EF.Core.Context
@@ -16,12 +14,12 @@ namespace Shop.Infrastructure.EF.Core.Context
         }
 
 
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Category> Categories { get; set; } = default!;
+        public DbSet<Order> Orders { get; set; } = null!;
+        public DbSet<OrderItem> OrderItems { get; set; } = null!;
+        public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<ProductImage> ProductImages { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
@@ -42,6 +40,9 @@ namespace Shop.Infrastructure.EF.Core.Context
             });
             modelBuilder.Entity<Product>().OwnsOne(b => b.Money);
             modelBuilder.Entity<User>().OwnsOne(b => b.PhoneBook);
+            modelBuilder.Entity<Category>().ToTable("Categories");
+            modelBuilder.Entity<Category>().Property(x => x.ParentId).IsRequired(false)
+                .HasColumnType("int").HasColumnName("ParentId");
 
             base.OnModelCreating(modelBuilder);
         }

@@ -2,7 +2,6 @@
 using Shop.Application.Users.DTOs;
 using Shop.Application.Utilities;
 using Shop.Domain.ProductAgg;
-using Shop.Domain.Products;
 using Shop.Domain.Shared;
 using Shop.Domain.UserAgg;
 using Shop.Domain.UserAgg.ValueObjects;
@@ -41,7 +40,7 @@ public class UserService : IUserService
 
         _repository.Add(user);
         _repository.Save();
-
+        // sms
         return OperationResult.Success("موفق");
     }
 

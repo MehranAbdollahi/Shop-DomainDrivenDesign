@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Products;
 using Shop.Application.Products.DTOs;
-using Shop.Domain.Products;
 
 namespace Shop.API.Controllers
 {

@@ -1,6 +1,4 @@
-﻿using Shop.Domain.Products;
-
-namespace Shop.Domain.ProductAgg;
+﻿namespace Shop.Domain.ProductAgg;
 
 public interface IProductRepository
 {

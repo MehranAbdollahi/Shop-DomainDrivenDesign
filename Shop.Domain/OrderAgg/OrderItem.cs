@@ -1,5 +1,4 @@
-﻿using Shop.Domain.Products;
-using Shop.Domain.Shared;
+﻿using Shop.Domain.Shared;
 
 namespace Shop.Domain.OrderAgg
 {
@@ -18,7 +17,9 @@ namespace Shop.Domain.OrderAgg
             ProductId = productId;
             Price = price;
         }
+#pragma warning disable CS8618
         private OrderItem()
+#pragma warning restore CS8618
         {
 
         }

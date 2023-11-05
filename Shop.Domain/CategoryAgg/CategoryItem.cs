@@ -1,5 +1,4 @@
-﻿using Shop.Domain.Products;
-using Shop.Domain.Shared;
+﻿using Shop.Domain.Shared;
 
 namespace Shop.Domain.CategoryAgg
 {

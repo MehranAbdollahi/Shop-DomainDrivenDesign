@@ -1,8 +1,7 @@
 ﻿using Shop.Domain.Shared;
 using Shop.Domain.Shared.Exceptions;
-using Shop.Domain.ProductAgg;
 
-namespace Shop.Domain.Products;
+namespace Shop.Domain.ProductAgg;
 
 public class Product : AggregateRoot
 {
@@ -17,7 +16,9 @@ public class Product : AggregateRoot
         Images = new List<ProductImage>();
     }
 
+#pragma warning disable CS8618
     private Product()
+#pragma warning restore CS8618
     {
         
     }

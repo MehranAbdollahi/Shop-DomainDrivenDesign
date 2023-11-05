@@ -1,5 +1,4 @@
-﻿using Shop.Domain.Products;
-using Shop.Domain.Shared;
+﻿using Shop.Domain.Shared;
 using Shop.Application.Products.DTOs;
 using Shop.Domain.ProductAgg;
 

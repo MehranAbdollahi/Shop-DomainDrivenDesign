@@ -8,8 +8,8 @@ public class IgnoreMemberAttribute : Attribute
 }
 public abstract class BaseValueObject : IEquatable<BaseValueObject>
 {
-    private List<PropertyInfo> properties;
-    private List<FieldInfo> fields;
+    private List<PropertyInfo> _properties;
+    private List<FieldInfo> _fields;
 
     public static bool operator ==(BaseValueObject obj1, BaseValueObject obj2)
     {
@@ -54,24 +54,24 @@ public abstract class BaseValueObject : IEquatable<BaseValueObject>
 
     private IEnumerable<PropertyInfo> GetProperties()
     {
-        if (this.properties == null)
+        if (this._properties == null)
         {
-            this.properties = GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
+            this._properties = GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(p => !Attribute.IsDefined(p, typeof(IgnoreMemberAttribute))).ToList();
         }
 
-        return this.properties;
+        return this._properties;
     }
 
     private IEnumerable<FieldInfo> GetFields()
     {
-        if (fields == null)
+        if (_fields == null)
         {
-            fields = GetType().GetFields(BindingFlags.Instance | BindingFlags.Public)
+            _fields = GetType().GetFields(BindingFlags.Instance | BindingFlags.Public)
                 .Where(f => !Attribute.IsDefined(f, typeof(IgnoreMemberAttribute))).ToList();
         }
 
-        return fields;
+        return _fields;
     }
 
     public override int GetHashCode()

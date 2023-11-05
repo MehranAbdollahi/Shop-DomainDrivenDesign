@@ -1,4 +1,4 @@
-﻿namespace Shop.Domain.Orders.Repository;
+﻿namespace Shop.Domain.OrderAgg.Repository;
 
 public interface IOrderRepository
 {

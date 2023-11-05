@@ -4,7 +4,6 @@ using Xunit;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 using Shop.Domain.CategoryAgg;
-using Shop.Domain.Orders;
 using Newtonsoft.Json.Linq;
 
 namespace Shop.Domain.Test.Unit.CategoryAgg
@@ -21,9 +20,6 @@ namespace Shop.Domain.Test.Unit.CategoryAgg
         [Fact]
         public void Should_Create_Category()
         {
-
-
-
             _category.Title.Should().Be("title");
             _category.ParentId.Should().Be(1);
             _category.Id.Should().Be(_category.Id);

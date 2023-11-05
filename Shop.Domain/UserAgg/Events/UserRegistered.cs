@@ -17,5 +17,7 @@ namespace Shop.Domain.UserAgg.Events
 
         public long UserId { get; private set; }
         public string Email { get; private set; }
+
+        
     }
 }

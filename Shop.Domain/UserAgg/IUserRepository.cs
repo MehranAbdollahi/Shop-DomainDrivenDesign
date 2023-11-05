@@ -1,6 +1,4 @@
-﻿using Shop.Domain.Products;
-
-namespace Shop.Domain.UserAgg;
+﻿namespace Shop.Domain.UserAgg;
 
 public interface IUserRepository
 {

@@ -1,6 +1,6 @@
 ﻿using Shop.Contracts;
 
-namespace Shop.Infrastructure;
+namespace Shop.Infrastructure.EF.Core;
 
 public class SmsService : ISmsService
 {

@@ -1,7 +1,7 @@
 ﻿@model List<Shop.Application.Categories.DTOs.CategoryDto>
 @{
     ViewData["title"] = "دسته بندی ها";
-    ViewData["selected"] = "category";
+    ViewData["Selected"] = "Category";
     var counter = 1;
 }
 <div class="content-wrapper">
@@ -42,7 +42,7 @@
                                                 <li>
                                                     @subCategory.Title
                                                     <a asp-area="admin" asp-controller="Category" asp-action="Edit" asp-route-id="@subCategory.Id" class="btn btn-info btn-sm">ویرایش</a>
-
+                                                    <a asp-area="admin" asp-controller="Category" asp-action="Delete" asp-route-id="@subCategory.Id" class="btn btn-info btn-sm">حذف</a>
                                                 </li>
                                             }
                                         </ul>
@@ -53,6 +53,7 @@
                                 <td>
                                     <a asp-area="admin" asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm">ویرایش</a>
                                     <a asp-area="admin" asp-controller="Category" asp-action="Add" asp-route-parentId="@item.Id" class="btn btn-success btn-sm">افزودن زیرگروه</a>
+                                    <a asp-area="admin" asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-success btn-sm"> حذف</a>
                                 </td>
                             </tr>
 

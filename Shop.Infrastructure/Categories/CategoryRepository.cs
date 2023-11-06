@@ -35,6 +35,12 @@ namespace Shop.Infrastructure.EF.Core.Categories
             Add(category);
         }
 
+        public void Delete(Category category)
+        {
+            var currentCategory = GetById(category.Id);
+            _shopContext.Categories.Remove(currentCategory);
+        }
+
         public void SaveChanges()
         {
             _shopContext.SaveChanges();

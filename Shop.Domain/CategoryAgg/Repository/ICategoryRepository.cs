@@ -6,5 +6,6 @@ public interface ICategoryRepository
     Category GetById(long id);
     void Add(Category category);
     void Update(Category category);
+    void Delete(Category category);
     void SaveChanges();
 }

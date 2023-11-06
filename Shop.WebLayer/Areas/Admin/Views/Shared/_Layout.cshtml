@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@ViewData["Title"]</title>
+
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -123,11 +125,19 @@
                 </form>
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
+                @{
+                    var selected = ViewData["Selected"];
+                }
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">منو</li>
 
-
-                    <li>
+                    <li class="@(selected=="Index"?"active":"")">
+                        <a asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-dashboard"></i>
+                            <span>داشبرد</span>
+                        </a>
+                    </li>
+                    <li class="@(selected=="Category"?"active":"")">
                         <a asp-controller="Category" asp-action="Index">
                             <i class="fa fa-book"></i>
                             <span>دسته بندی ها</span>

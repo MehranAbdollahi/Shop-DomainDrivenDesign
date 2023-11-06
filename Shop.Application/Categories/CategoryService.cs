@@ -45,6 +45,21 @@ public class CategoryService : ICategoryService
         return OperationResult.Success("عملیات با موفقیت انجام شد.");
     }
 
+    public OperationResult DeleteCategory(long categoryId)
+    {
+        var category = _repository.GetById(categoryId);
+
+        if (category == null)
+        {
+            return OperationResult.NotFound("دسته بندی یافت نشد.");
+        }
+
+        _repository.Delete(category);
+        _repository.SaveChanges();
+
+        return OperationResult.Success("عملیات با موفقیت انجام شد.");
+    }
+
     public CategoryDto GetCategoryById(long categoryId)
     {
         var category = _repository.GetById(categoryId);

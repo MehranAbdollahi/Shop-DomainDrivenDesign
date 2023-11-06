@@ -64,7 +64,19 @@ namespace Shop.WebLayer.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+        [Route("/admin/category/delete/{categoryId}")]
+        public IActionResult Delete(int categoryId)
+        {
+            var result = _categoryService.DeleteCategory(categoryId);
 
+            if (result.Status != OperationResultStatus.Success)
+            {
+                return RedirectToAction("Index");
+            }
+
+            //return RedirectAndShowAlert(result, RedirectToAction("Index"));
+            return RedirectToAction("Index");
+        }
 
         //public IActionResult GetChildCategories(int parentId)
         //{
